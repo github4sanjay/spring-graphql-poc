@@ -1,0 +1,29 @@
+type Query {
+    hello: String
+    helloWithName(name: String): String
+    customerById(id: ID): Customer
+    customers: [Customer]
+    countries: [Country]
+    countryByCode(code: String): Country
+}
+
+type Mutation {
+    addCustomer(name: String): Customer
+}
+
+type Customer {
+    id: ID
+    name: String
+    profile: Profile
+}
+
+type Profile {
+    id: ID
+    customerId: ID
+}
+
+type Country {
+    code: String
+    capital: String
+    name: String
+}
